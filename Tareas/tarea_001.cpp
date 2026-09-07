@@ -143,7 +143,7 @@ int main(){
             }
             else{
 
-                cout << "La temperatura debe de estar en el rango de -50 y 60 Celsius" << '\n';
+                cout << "Error: La temperatura debe de estar en el rango de -50 y 60 Celsius" << '\n';
 
             }
         }
@@ -164,7 +164,7 @@ int main(){
             }
         }
 
-        if (cualQuiere == "maximo"){
+        if (cualQuiere == "maxima"){
 
             double maxima = EstacionMetereologica.Maxima();
             if (EstacionMetereologica.getCantidadLecturas() > 0){
@@ -181,7 +181,7 @@ int main(){
 
         if (cualQuiere == "cantidad"){
 
-            cout << EstacionMetereologica.getNombreEstacion() << " lecturas registradas: " 
+            cout << EstacionMetereologica.getNombreEstacion() << " - lecturas registradas: " 
             <<  EstacionMetereologica.getCantidadLecturas() << '\n';
 
         }
