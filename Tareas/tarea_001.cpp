@@ -34,14 +34,24 @@ public:
     bool registrarLectura(double temperatura){
 
 //si la tempe es entre ambos valores 
-        if(temperatura <= -50 && temperatura <= 60){
+        if(temperatura >= -50 && temperatura <= 0 ){
 
 //si se cumple se agrega a la temperatura y retorna true
             temperaturas.push_back(temperatura);
             return true;
 
         }
+
+        if (temperatura >= 0 && temperatura <=60){
+
+//si se cumple se agrega a la temperatura y retorna true
+            temperaturas.push_back(temperatura);
+            return true;
+
+
+        }
 //si no se cumple se returna falso solamente
+
         else{
 
             return false;
@@ -180,3 +190,6 @@ int main(){
 return 0; 
 
 }
+
+// g++ probar.cpp -o probar
+// .\probar.exe
