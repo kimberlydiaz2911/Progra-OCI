@@ -92,7 +92,11 @@ int main (){
                 cout << "No hay pedidos pendientes" << '\n';
 
             }
-            
+            else{
+
+                pedidos.pop();
+
+            }
 
 
         }
