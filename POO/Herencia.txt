@@ -1,0 +1,82 @@
+Cuando existe una relacion se puede usar la herencia
+La herencia solo se puede recibir o la privada o la publica, no ambas al mismo tiempo
+
+Clases bases y derivadas 
+
+se declara con dos puntos seguido de la derivada
+
+
+class Empleado {
+
+public: 
+string nombre;
+double salario;
+
+void pagar (){
+
+cout << nombre << "recibe" << salario << '\n';
+
+}
+};
+
+
+clas Gerente : public Empleado{
+
+public: 
+
+double bono; 
+
+}
+
+
+la publica se puede desde fuera, desde la clase propia y desde la derivada
+la protected se puede desde la propia clase, desde la derivada, pero no por fuera
+la private se puede 
+
+
+El portected funciona para que se pueda heredar, pero que no se pueda modificar, 
+el private no es heredable facilmente, por lo que se heredan con protected. 
+
+
+
+Constructores en clases derivadas
+
+en python se usaba el super()__init__(parametros)
+
+
+class Gerente : public Empleado{
+
+public: 
+
+    double bono; 
+
+// se crea a gerente con los parametros que se quiere, luego se utilizan los datos que tiene 
+el padre para heredarselos al hijo.
+
+    Gerente(string nombre, double salario, double bono) : Empleado(nombre, salario){
+
+        this -> bono = bono; 
+
+
+    }
+};
+
+
+
+class Persona{
+
+private: 
+    int edad; 
+
+public:
+    Persona(){
+
+        edad = 0; 
+
+    }
+};
+
+
+
+Orden de construccion y destruccion 
+
