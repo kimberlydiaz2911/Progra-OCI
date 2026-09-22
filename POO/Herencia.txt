@@ -65,6 +65,7 @@ el padre para heredarselos al hijo.
 
 class Persona{
 
+
 private: 
     int edad; 
 
@@ -80,3 +81,111 @@ public:
 
 Orden de construccion y destruccion 
 
+Constructores por defecto, reciben todo inicializado, que son por defecto JSJAJJAJAJAJ
+
+class Empleado {
+
+public: 
+    Empleado () {cout << "Empleado construido"; }
+    ~Empleado() {cout << "Empleado destruido"; }
+
+};
+
+class Gerente : public Empleado{
+
+public: 
+
+    Gerente() {cout << "Gerente construido"; }
+    ~Gerente() {cout << "Gerente destruido"; }
+
+};
+
+
+La base se construye primero porque la derivada depende de ella para que exista
+al destrirse el orden se invierte, primero se destruye la agregada al final, luego 
+la derivada y luego la base
+
+
+Redefinicion de metodos heredados
+
+
+Una clase deruvada puede declarar un metodo con el mismo nombre y mismos parameetros que 
+uno de la base, este metodo nuevo reemplaza al de la base para los objetos de la 
+clase derivada, en un proceso llamado redefinicion 
+
+
+class Gerente : public Empleado{ 
+
+public: 
+    double bono; 
+
+    Gerente (string nombre, double salario, double bono) 
+    : Empleado (nombre, salario){
+    this -> bono = bono; 
+
+    }
+
+    void pagar() {
+
+        cout << nombre << "recibe" << salario << '\n';
+
+    }
+};
+
+
+
+Oculatamiento de miembros 
+
+La secciion anterior redefinio un metodo con el mismo nombre de la derivada
+proposito para cambiar su comportamiento. Declarar un miembro con el mismo nombre 
+que uno 
+
+
+class Empleado {
+
+public: 
+    void pagar() {cout << "Pago base";}
+    void pagar(double extra) {cout << "Pago base" << extra;}
+
+};
+
+class Gerente : public Empleado {
+
+public: 
+    void pagar()
+
+
+}
+
+
+class Gerente : public Empleado {
+
+public: 
+    using Empleado :: pagar;
+
+    void pagar() {
+
+    cout << "Pago gerente"l 
+
+    }
+}
+
+
+
+Slicing de objetos 
+
+
+Asiganar un objeto de una clase derivada a una variable declarada con 
+
+
+// al heredar el g en e, solo le caben los parametros que se heredan, el salario 
+y el nombre, el bono se pierde, seria un empleado por aparte, y no un empleado normal 
+
+//Para evitar esti no se copia, usadno una referencia a la base en vez de esta variable. 
+Esto es la base del polimorfismo 
+
+Gerente g ("Marta", 1200, 300);
+Empleado e = g; 
+
+
+e.pagar()
