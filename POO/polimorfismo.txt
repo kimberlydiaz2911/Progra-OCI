@@ -12,4 +12,75 @@ objeto, en memoria dinamica y devuelve a el.
 Empleado* e = rew Empleado("Ana", 1000); 
 e -> pagar(); 
 
+// Para poder hacer polimorfismo, para que revise la original, y que no haga lo del empleado 
+normal, si no que la version sea otra
 
+
+Funciones virtuales 
+
+class Producto {
+protected:
+    string nombre;
+    double salario; 
+
+public:
+    Producto(string nombre, double salaro) {
+        this->nombre = nombre;
+        this->salario = salario;
+        
+    }
+//al ejecutar, el cpp va a ver que tiene que pagar
+si solo tiene el empleado, va a pagar, pero si la hija tiene otro tipo 
+lo que hace es que revisa el tipo y mediante este se ejecuta el pagar, 
+o la funcion que se necesita. 
+// Evita que haya un slicing, y perder los datos. Si no se usa, se crea y solamente 
+nos da la posicion en donde vive. 
+
+// la llamada recibe la del empleado, pero ejecuta la del gerente, algo asi JAJAJAJJAJA
+
+
+    virtual void pagar(){
+
+        cout << nombre << "recibe" << salario << '\n';
+
+    }
+};
+
+Sobreescritura con override
+
+escrito despues de los parametros del metodo derivada, le pide al 
+compilador que verufique que esre metodo de verdad sobreescribe uno vitual 
+de la base. Si la firma no coincide, el programa no coincide, en 
+vez de crear en silencio un metodo nuevo que oculta al heredado 
+
+
+class Gerente : public Empleado {
+
+public: 
+    void pagar( int extra) override{
+
+        cout << nombre << "recibe" << 
+
+    }
+};
+
+virtual en la original, en la base, que seria empleado 
+y el override en la heredada hija
+
+
+
+Enlace dinamico y polimorfismo en tiempo de ejecucion 
+
+sin virtual, cpp decide que version de un metodo ejecutar furante la ejecucion, mirando solo 
+el tipo declarado de la variable. 
+
+class Practicante : public Empleado{ 
+
+public: Practicante(string nombre, double salario)
+    : Empleado(nombre, salario){}
+
+    void pagar() override{
+
+        cout << ....
+    }
+    };
