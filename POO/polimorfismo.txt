@@ -1,0 +1,15 @@
+El polimorfismo permite distintos objetos responda de forma 
+
+
+
+Punteros a objetos
+
+un puntero es una variable que no guarda un objeto, guarda una 
+direccion de memoria donde vive un objeto ya creado. Se declara con * 
+despues del tipo (desempaquetador) y se inicializa con rew, que reserva un
+objeto, en memoria dinamica y devuelve a el. 
+
+Empleado* e = rew Empleado("Ana", 1000); 
+e -> pagar(); 
+
+
