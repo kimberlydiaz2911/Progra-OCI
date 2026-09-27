@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std; 
 
@@ -77,49 +78,33 @@ public:
     }
 };
 
-int main (){
+int main() {
 
-    int N; 
-    string mascota; 
-    cin >> N; 
+int N;
+cin >> N;
 
-    string perro; 
-    string gato; 
+for (int i = 0; i < N; i++) {
 
-    for (int i = 0; i < N; i++){
+    string tipo;
+    string nombre;
+    int edad;
 
-        cin >> mascota; 
+    cin >> tipo >> nombre >> edad;
 
-        if (mascota == "perro"){
+    if (tipo == "perro") {
+        string raza;
+        cin >> raza;
 
-            int edad; 
-            string raza;
+        Perro p(nombre, edad, raza);
+        p.informacion();
+    } 
+    else if (tipo == "gato") {
+        int interior;
+        cin >> interior;
 
-            cin >> edad; 
-            cin >> raza;
-
-            Perro perro(string nombre, int edad, string raza);
-
-
-        }
-        if (mascota == "gato"){
-
-            int edad; 
-            bool interior; 
-
-            cin >> edad; 
-            cin >> interior; 
-
-            Gato gato(string nombre, int edad, bool interior);
-
-
-
-        }
+        Gato g(nombre, edad, interior);
+        g.informacion();
     }
-
-
-
-    return 0; 
 }
-
+}
 
