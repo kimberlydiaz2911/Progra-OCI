@@ -106,5 +106,7 @@ for (int i = 0; i < N; i++) {
         g.informacion();
     }
 }
+return 0;
 }
 
+// ajjadjajdojaosjdosjdoa djad dajdoaj d 
