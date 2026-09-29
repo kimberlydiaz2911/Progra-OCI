@@ -1,0 +1,16 @@
+La abstracción consiste en definir 
+
+
+
+Una función pura es una funcipon virtual que termina en ....... y no tiene cuerpo. Una clase 
+abstracta es la que tiene al menos una. 
+
+class Figura {
+
+protecting: 
+    string nombre; 
+
+public: 
+    Figura(string )
+
+}
